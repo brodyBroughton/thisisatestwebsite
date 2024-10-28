@@ -123,14 +123,24 @@
             height: auto;
         }
         .verification-message {
-            position: absolute;
-            bottom: 25%;
+            position: fixed;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             padding: 0.5rem 1rem;
             border-radius: 4px;
             font-size: 0.9rem;
             color: #666;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 600px) {
+            .verification-message {
+                width: 90%;
+                bottom: 20px;
+                font-size: 0.8rem;
+            }
         }
         .linky-winky {
             text-decoration: none;
