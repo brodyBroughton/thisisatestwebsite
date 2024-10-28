@@ -279,6 +279,17 @@
                 showResult();
             }
         }
+        function showResult() {
+            document.getElementById('quiz-content').style.display = 'none';
+            document.getElementById('result-container').style.display = 'block';
+            
+            // Simple result calculation based on most frequent answer
+            const mostFrequent = answers.sort((a,b) =>
+                answers.filter(v => v === a).length - answers.filter(v => v === b).length
+            ).pop();
+            
+            document.getElementById('result-text').textContent = results[mostFrequent];
+        }
 
         // Add floating emojis
         const emojis = ['💀', '🍆', '😭', '👿', '🔥', '🍑'];
